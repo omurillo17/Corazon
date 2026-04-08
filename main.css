@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Fondo oscuro tinto/negro simulando la imagen */
+    background: radial-gradient(circle at center, #3a000a 0%, #0a0002 100%);
+    color: #ffffff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('damask_pattern.jpg');
+    opacity: 0.15;
+    z-index: -1;
+}
+
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    z-index: 10;
+}
+
+.titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+    /* Brillo en el texto */
+}
+
+/* MARCO DE LA IMAGEN CON RESPLANDOR ROJO */
+.marco-imagen {
+    background: #e6c8c8;
+    padding: 10px;
+    border: 4px solid #1a1a1a;
+    border-radius: 15px;
+    margin: 0 auto 30px auto;
+    width: fit-content;
+    box-shadow: 0 0 40px 15px rgba(255, 0, 43, 0.6), inset 0 0 10px rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+/* Borde doble elegante */
+.marco-imagen::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid #4a0000;
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+.gif {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 8px;
+    display: block;
+}
+
+/* BOTONES */
+.opciones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    padding: 10px 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-no {
+    background: #111111;
+    color: #666666;
+    border: 1px solid #333;
+    z-index: 9999;
+}
+
+.btn-si {
+    background: linear-gradient(180deg, #b3001b 0%, #66000f 100%);
+    color: white;
+    border: 1px solid #ffcc00;
+    box-shadow: 0 0 20px rgba(255, 0, 43, 0.8);
+}
+
+.btn-si:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 0, 43, 1);
+}
+
+/* MENSAJE FINAL */
+#mensaje-exito {
+    background: #0a0a0a;
+    border: 1px solid #ffcc00;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(255, 0, 43, 0.7);
+    animation: aparecer 1s ease-in-out;
+}
+
+#mensaje-exito h2 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+.oculto {
+    display: none !important;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* CORAZONES FLOTANTES DE FONDO */
+.hearts-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -10%;
+    font-size: 1.5rem;
+    animation: floatUp 6s linear infinite;
+    opacity: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-100vh) scale(1.2);
+        opacity: 0;
+    }
+}
