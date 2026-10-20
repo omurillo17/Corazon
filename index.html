@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Tí</title>
-    <!-- Fuentes elegantes de Google Fonts -->
+    <title>Una invitación para ti 🐠</title>
     <link rel="icon" type="image/png" href="corazon.png">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@400;600&display=swap"
@@ -14,34 +13,152 @@
 </head>
 
 <body>
-    <!-- Corazones flotantes de fondo -->
-    <div class="hearts-bg">
-        <div class="heart">❤️</div>
-        <div class="heart" style="animation-delay: 2s; left: 20%;">🖤</div>
-        <div class="heart" style="animation-delay: 4s; left: 80%;">❤️</div>
-        <div class="heart" style="animation-delay: 1s; left: 50%;">💕</div>
-        <div class="heart" style="animation-delay: 3s; left: 90%;">🖤</div>
+    <!-- Rayos de luz, burbujas y peces de fondo -->
+    <div class="rayos"></div>
+    <div class="burbujas">
+        <span style="left: 5%;"></span>
+        <span style="left: 18%; animation-delay: 2s; width: 8px; height: 8px;"></span>
+        <span style="left: 32%; animation-delay: 4s;"></span>
+        <span style="left: 47%; animation-delay: 1s; width: 20px; height: 20px;"></span>
+        <span style="left: 63%; animation-delay: 3s;"></span>
+        <span style="left: 78%; animation-delay: 5s; width: 10px; height: 10px;"></span>
+        <span style="left: 92%; animation-delay: 2.5s;"></span>
+    </div>
+    <div class="peces">
+        <span style="top: 12%;">🐠</span>
+        <span style="top: 35%; animation-delay: 6s; animation-duration: 22s;">🐟</span>
+        <span style="top: 62%; animation-delay: 3s; animation-duration: 16s;">🐡</span>
+        <span class="izq" style="top: 80%; animation-delay: 9s;">🐢</span>
+        <span class="izq" style="top: 50%; animation-delay: 1s; animation-duration: 26s;">🪼</span>
     </div>
 
-    <div class="container">
-        <h1 class="titulo">🥰😍 ¿Te gusto? 🥰😍</h1>
+    <main class="container">
+        <!-- 0: Sobre -->
+        <section class="escena activa">
+            <div class="sobre">💌</div>
+            <h1 class="titulo">Tengo algo para ti<span class="chiste">Abre con cuidado, contiene peces</span></h1>
+            <button class="btn btn-si siguiente">Ábrela 🫧</button>
+        </section>
 
-        <!-- El marco con el resplandor rojo -->
-        <div class="marco-imagen">
-            <img src="amour-love.gif" alt="Gatitos amor" class="gif">
-        </div>
+        <!-- 1: Elegir ramo -->
+        <section class="escena">
+            <h1 class="titulo">¿Cuáles te gustan más?</h1>
+            <div class="rosas">
+                <button class="rosa">
+                    <img src="gerberas.jpg" alt="Ramo de gerberas">
+                    <span>Gerberas</span>
+                </button>
+                <button class="rosa">
+                    <img src="rosas.jpg" alt="Ramo de rosas">
+                    <span>Rosas</span>
+                </button>
+                <button class="rosa">
+                    <img src="girasoles.jpg" alt="Ramo de girasoles">
+                    <span>Girasoles</span>
+                </button>
+            </div>
+        </section>
 
-        <div class="opciones">
-            <button id="btn-si" class="btn btn-si">Si 💛</button>
-            <button id="btn-no" class="btn btn-no">No</button>
-        </div>
+        <!-- 2: Ramo en pastel -->
+        <section class="escena">
+            <div class="marco">
+                <canvas id="lienzo" width="450" height="600"></canvas>
+            </div>
+            <p class="texto" id="texto-pastel">Pintándolas para ti… 🎨</p>
+            <button id="btn-pastel" class="btn btn-si siguiente">Sigue 🐚</button>
+        </section>
 
-        <!-- Mensaje oculto al inicio -->
-        <div id="mensaje-exito" class="oculto">
-            <h2>Gracias preciosa, lo sabía JAJA.💖</h2>
-        </div>
-    </div>
+        <!-- 3: Túnel -->
+        <section class="escena">
+            <div class="marco">
+                <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Aquarium_Tunnels%2C_Kelly_Tarlton_Aquarium.jpg/960px-Aquarium_Tunnels%2C_Kelly_Tarlton_Aquarium.jpg"
+                    alt="Túnel de acuario">
+            </div>
+            <p class="texto">Imagina caminar por aquí, rodeados de mar<span class="chiste">Aquí los visitantes somos nosotros, los peces solo observan</span></p>
+            <button class="btn btn-si siguiente">Sigue 🐚</button>
+        </section>
 
+        <!-- 4: Mini galería -->
+        <section class="escena">
+            <div class="galeria">
+                <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Common_clownfish.jpg/960px-Common_clownfish.jpg"
+                    alt="Pez payaso">
+                <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Green_Sea_Turtle_Swimming_in_the_Gal%C3%A1pagos.jpg/960px-Green_Sea_Turtle_Swimming_in_the_Gal%C3%A1pagos.jpg"
+                    alt="Tortuga marina">
+                <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Little_Penguin_swimming_in_the_water.jpg/960px-Little_Penguin_swimming_in_the_water.jpg"
+                    alt="Pingüino nadando">
+                <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Male_whale_shark_at_Georgia_Aquarium.jpg/960px-Male_whale_shark_at_Georgia_Aquarium.jpg"
+                    alt="Tiburón ballena">
+            </div>
+            <p class="texto">Hay mucho por ver, y me gustaría verlo contigo<span class="chiste">Spoiler: la tortuga es mi favorita, pero acepto otras opiniones</span></p>
+            <button class="btn btn-si siguiente">¿Y luego? 🐠</button>
+        </section>
+
+        <!-- 5: Video medusas -->
+        <section class="escena">
+            <div class="marco">
+                <video src="https://upload.wikimedia.org/wikipedia/commons/2/23/Phantom_Jellyfish_Off_of_the_Melchior_Islands.webm"
+                    muted loop playsinline preload="none"></video>
+            </div>
+            <p class="texto">Dicen que las medusas brillan... quiero ver si es cierto<span class="chiste">Mírala, flotando sin preocupaciones. Así quiero que sea nuestra salida</span></p>
+            <button class="btn btn-si siguiente">Más 🪼</button>
+        </section>
+
+        <!-- 6: Video tiburones -->
+        <section class="escena">
+            <div class="marco">
+                <video src="https://upload.wikimedia.org/wikipedia/commons/d/df/Whale_Sharks_-_Osaka_Aquarium.webm"
+                    muted loop playsinline preload="none"></video>
+            </div>
+            <p class="texto">Y por supuesto, los gigantes del océano<span class="chiste">Tranqui, son vegetarianos... creo</span></p>
+            <button class="btn btn-si siguiente">Una última cosa 💌</button>
+        </section>
+
+        <!-- 7: La pregunta -->
+        <section class="escena" id="pregunta">
+            <div class="sobre latido">🐠💙🐠</div>
+            <h1 class="titulo">¿Aceptarías salir conmigo al acuario?</h1>
+            <div class="opciones">
+                <button id="btn-si" class="btn btn-si">Sí 💙</button>
+                <button id="btn-no" class="btn btn-no">No</button>
+            </div>
+        </section>
+
+        <!-- 8: Día y hora -->
+        <section class="escena">
+            <div class="sobre">📅</div>
+            <h1 class="titulo">¿Qué día y a qué hora?</h1>
+            <div class="cita">
+                <input type="date" id="fecha" aria-label="Día">
+                <input type="time" id="hora" aria-label="Hora">
+            </div>
+            <button id="btn-cita" class="btn btn-si siguiente" disabled>Listo ⏰</button>
+        </section>
+
+        <!-- 9: Chiste de la moto -->
+        <section class="escena">
+            <div class="sobre">🏍️</div>
+            <p class="texto">Sería ir en moto ya que aún no compro mi carro 😆</p>
+            <h2 class="titulo">¿Te parece?</h2>
+            <div class="opciones">
+                <button id="btn-moto" class="btn btn-si">Sí 🏍️</button>
+                <button class="btn btn-no">No</button>
+            </div>
+        </section>
+
+        <!-- 10: Sí -->
+        <section class="escena" id="mensaje-exito">
+            <div class="marco">
+                <canvas id="recuerdo" width="450" height="600" aria-label="El ramo que elegiste, en pastel"></canvas>
+            </div>
+            <h2 class="titulo">¡Me hace muy feliz!<span class="chiste">¡Sabía que no podías decir que no!</span></h2>
+            <p class="texto">Te espero ese día, va a ser bonito<span class="chiste">Ya está agendado. Yo pongo la moto, tú pones la buena compañía</span></p>
+            <p class="texto" id="resumen"></p>
+            <a class="btn btn-si" href="https://acuariomichin.com" target="_blank" rel="noopener">Conoce el acuario 🐟</a>
+        </section>
+    </main>
+
+    <script src="fotos.js"></script>
     <script src="script.js"></script>
 </body>
 
