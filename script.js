@@ -238,7 +238,7 @@ btnCita.addEventListener('click', () => {
 document.getElementById('btn-moto').addEventListener('click', (e) => {
     estallido(e.clientX, e.clientY);
     mostrar(actual + 1);
-    // Me avisa por WhatsApp (función de Netlify); si falla, la página sigue igual
+    // Me avisa por Telegram desde el servidor (función de Netlify); si falla, la página sigue igual
     fetch('/api/cita', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
